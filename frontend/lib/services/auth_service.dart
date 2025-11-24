@@ -60,11 +60,26 @@ class AuthService {
   }
 
   Future<Map<String, dynamic>?> getCurrentUser() async {
-    final prefs = await SharedPreferences.getInstance();
-    final userString = prefs.getString('user');
-    if (userString != null) {
-      return jsonDecode(userString);
+    try {
+      // API에서 최신 유저 정보 가져오기
+      final response = await _apiService.get(
+        '/users/me',
+        includeAuth: true,
+      );
+      
+      // SharedPreferences에도 저장
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('user', jsonEncode(response));
+      
+      return response;
+    } catch (e) {
+      // API 실패시 캐시된 데이터 반환
+      final prefs = await SharedPreferences.getInstance();
+      final userString = prefs.getString('user');
+      if (userString != null) {
+        return jsonDecode(userString);
+      }
+      return null;
     }
-    return null;
   }
 }
