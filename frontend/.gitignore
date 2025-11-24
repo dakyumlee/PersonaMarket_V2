@@ -1,0 +1,21 @@
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Web
+web/favicon.png
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Misc
+*.class
+*.log
+.DS_Store
