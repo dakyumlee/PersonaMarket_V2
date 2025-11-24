@@ -30,21 +30,18 @@ public class Dialogue {
     @Column(length = 5000, nullable = false)
     private String userMessage;
     
+    @Column(length = 5000, nullable = false)
+    private String aiResponse;
+    
     @Column(name = "is_training_data")
     @Builder.Default
     private Boolean isTrainingData = false;
-
-    @Column(length = 5000, nullable = false)
-    private String aiResponse;
     
     @Enumerated(EnumType.STRING)
     private EmotionFeedback emotionFeedback;
     
     @Column(length = 1000)
     private String feedbackComment;
-    
-    @Column(nullable = false)
-    private Boolean isTrainingData = false;
     
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
