@@ -1,7 +1,5 @@
 package com.personamarket.entity;
 
-import com.personamarket.entity.enums.PersonaStatus;
-import com.personamarket.entity.enums.PricingType;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -93,4 +91,12 @@ public class Persona {
     @UpdateTimestamp
     @Column(nullable = false)
     private LocalDateTime updatedAt;
+
+    public enum PersonaStatus {
+        DRAFT, PUBLISHED, PRIVATE, ARCHIVED
+    }
+
+    public enum PricingType {
+        FREE, PAID
+    }
 }
