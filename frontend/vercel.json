@@ -1,20 +1,7 @@
 {
   "version": 2,
-  "buildCommand": "if [ ! -d \"flutter\" ]; then git clone https://github.com/flutter/flutter.git -b stable --depth 1; fi && export PATH=\"$PATH:$PWD/flutter/bin\" && flutter doctor -v && flutter clean && flutter pub get && flutter build web --release",
+  "buildCommand": "git clone https://github.com/flutter/flutter.git -b stable --depth 1 && export PATH=\"$PATH:$PWD/flutter/bin\" && flutter doctor -v && flutter pub get && flutter build web --release",
   "outputDirectory": "build/web",
-  "installCommand": "echo 'Skip default install'",
-  "devCommand": "flutter run -d web-server --web-port 3000",
+  "installCommand": "echo 'Skip install'",
   "framework": null
 }
-,
-  "headers": [
-    {
-      "source": "/favicon.png",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ]
