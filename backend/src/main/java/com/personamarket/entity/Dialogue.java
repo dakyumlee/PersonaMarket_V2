@@ -30,6 +30,10 @@ public class Dialogue {
     @Column(length = 5000, nullable = false)
     private String userMessage;
     
+    @Column(name = "is_training_data")
+    @Builder.Default
+    private Boolean isTrainingData = false;
+
     @Column(length = 5000, nullable = false)
     private String aiResponse;
     
