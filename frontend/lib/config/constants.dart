@@ -32,12 +32,10 @@ class AppStrings {
   static const String marketSubtitle = '자아가 팔리는 세상';
   static const String searchPlaceholder = '페르소나 검색...';
   static const String noPersonasFound = '페르소나가 없습니다';
-  
   static const String createTitle = '페르소나 생성';
   static const String createSubtitle = '독특한 AI 인격을 디자인하세요';
   static const String trainTitle = '페르소나 훈련';
   static const String trainSubtitle = '대화하며 AI를 진화시키세요';
-  
   static const String name = '이름';
   static const String namePlaceholder = '페르소나 이름을 입력하세요';
   static const String description = '설명';
@@ -50,7 +48,6 @@ class AppStrings {
   static const String worldviewPlaceholder = '가치관, 신념, 관점...';
   static const String tags = '태그';
   static const String tagsPlaceholder = '친절함, 창의적, 기술 (쉼표로 구분)';
-  
   static const String status = '상태';
   static const String pricing = '가격 설정';
   static const String draft = '임시저장';
@@ -60,13 +57,11 @@ class AppStrings {
   static const String paid = '유료';
   static const String createButton = '페르소나 생성';
   static const String startTraining = '훈련 시작';
-  
   static const String profileTitle = '프로필';
   static const String myPersonas = '내 페르소나';
   static const String chatHistory = '대화 기록';
   static const String settings = '설정';
   static const String logout = '로그아웃';
-  
   static const String loginTitle = '로그인';
   static const String loginSubtitle = 'Persona Market에 오신 것을 환영합니다';
   static const String registerTitle = '회원가입';
@@ -81,16 +76,13 @@ class AppStrings {
   static const String registerButton = '회원가입';
   static const String noAccount = '계정이 없으신가요? ';
   static const String register = '회원가입';
-  
   static const String startConversation = '대화 시작하기';
   static const String typePlaceholder = '메시지를 입력하세요...';
   static const String thinking = '생각 중...';
-  
   static const String by = 'by';
   static const String evolutionLevel = '진화 레벨';
   static const String downloads = '다운로드';
   static const String level = '레벨';
-  
   static const String trainingMessages = '훈련 메시지';
   static const String minRequired = '최소 필요';
 }
@@ -100,17 +92,15 @@ class AppSizes {
   static const double paddingMedium = 16.0;
   static const double paddingLarge = 24.0;
   static const double paddingXLarge = 32.0;
-  
   static const double borderRadius = 12.0;
   static const double borderRadiusSmall = 8.0;
   static const double borderRadiusLarge = 16.0;
-  
   static const double iconSize = 24.0;
   static const double iconSizeSmall = 20.0;
   static const double iconSizeLarge = 32.0;
 }
 
 class AppConfig {
-  static const String apiBaseUrl = 'http://localhost:8080/api';
+  static const String apiBaseUrl = 'https://personamarketbackend-production.up.railway.app/api';
   static const String appName = 'Persona Market';
 }
