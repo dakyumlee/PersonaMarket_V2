@@ -37,6 +37,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/personas/public/**").permitAll()
                 .requestMatchers("/api/personas/search/**").permitAll()
                 .requestMatchers("/api/personas/{id}").permitAll()
+                .requestMatchers("/actuator/**").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
