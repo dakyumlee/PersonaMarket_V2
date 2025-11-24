@@ -17,7 +17,12 @@ class AuthProvider with ChangeNotifier {
   Future<void> _checkAuth() async {
     _isAuthenticated = await _authService.isAuthenticated();
     if (_isAuthenticated) {
-      _user = await _authService.getCurrentUser();
+      try {
+        _user = await _authService.getCurrentUser();
+      } catch (e) {
+        print('Error loading user: $e');
+        _user = null;
+      }
     }
     notifyListeners();
   }
@@ -25,7 +30,8 @@ class AuthProvider with ChangeNotifier {
   Future<bool> register(String email, String username, String password) async {
     try {
       final response = await _authService.register(email, username, password);
-      _user = response['user'];
+      // 로그인 후 최신 유저 정보 가져오기
+      _user = await _authService.getCurrentUser();
       _isAuthenticated = true;
       notifyListeners();
       return true;
@@ -37,11 +43,13 @@ class AuthProvider with ChangeNotifier {
   Future<bool> login(String email, String password) async {
     try {
       final response = await _authService.login(email, password);
-      _user = response['user'];
+      // 로그인 후 최신 유저 정보 가져오기
+      _user = await _authService.getCurrentUser();
       _isAuthenticated = true;
       notifyListeners();
       return true;
     } catch (e) {
+      print('Login error: $e');
       return false;
     }
   }
